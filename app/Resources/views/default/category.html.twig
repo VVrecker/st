@@ -3,7 +3,7 @@
 {% block body %}
 <h1> {{ name }}</h1>
 <ol>
-{% for good in goods %}
+{% for good in category.goods %}
 	<li>{{good.name}}</li>
 {% endfor %}
 </ol>

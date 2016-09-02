@@ -8,12 +8,16 @@
 			{% for category in categories %}
 			<li CLASS="cat{{category.id}}"><a
 				href="{{ path('category_name', { 'name': category.name }) }}">{{ category.name }}</a></li>
-			{% endfor %}
-			
+			{% endfor %}			
 			<ol class="good">
 				{% for good in goods %}
 				<li
-					CLASS="{% for val in linking %}{% if  val.goods.id == good.id%}class{{ val.categories.id }} {% endif %}{% endfor %}">{{good.name}}</li>
+					CLASS="
+					{% for category in categories %}
+					    {% for val in category.goods %}
+					        {% if  val.id == good.id%}class{{ category.id }} {% endif %}
+					    {% endfor %}
+					{% endfor %}">{{good.name}}</li>
 				{% endfor %}
 			</ol>
 		</ol>
@@ -25,7 +29,6 @@
 <div CLASS="menu">
 <a href="{{ path('categories_index') }}">Categories</a>
 <a href="{{ path('goods_index') }}">Goods</a>
-<a href="{{ path('linking_index') }}">Linking</a>
 </div>
 {% endblock %}
 {% block stylesheets %}

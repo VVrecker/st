@@ -16,6 +16,7 @@ class CategoriesType extends AbstractType
     {
         $builder
             ->add('name')
+            ->add('goods')
         ;
     }
     

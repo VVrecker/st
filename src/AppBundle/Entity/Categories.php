@@ -1,7 +1,7 @@
 <?php
 
 namespace AppBundle\Entity;
-
+use Doctrine\Common\Collections\ArrayCollection;
 /**
  * Categories
  */
@@ -17,7 +17,16 @@ class Categories
      */
     private $name;
 
-
+    /**
+     * @var int
+     */
+    private $goods;
+    
+    public function __construct()
+    {
+        $this->goods = new ArrayCollection();
+    }
+    
     /**
      * Get id
      *
@@ -50,6 +59,16 @@ class Categories
     public function getName()
     {
         return $this->name;
+    }
+    
+    /**
+     * Get goods
+     *
+     * @return int
+     */
+    public function getGoods()
+    {
+        return $this->goods;
     }
 }
 

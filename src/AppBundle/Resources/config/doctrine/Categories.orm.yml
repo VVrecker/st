@@ -11,5 +11,8 @@ AppBundle\Entity\Categories:
     fields:
         name:
             type: string
-            length: 255
+            length: '500'
+    manyToMany:
+      goods:
+        targetEntity: AppBundle\Entity\Goods
     lifecycleCallbacks: {  }

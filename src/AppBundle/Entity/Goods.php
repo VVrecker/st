@@ -17,7 +17,6 @@ class Goods
      */
     private $name;
 
-
     /**
      * Get id
      *
@@ -50,6 +49,12 @@ class Goods
     public function getName()
     {
         return $this->name;
+    }
+    
+    
+    function __toString()
+    {
+        return $this->getName();
     }
 }
 

@@ -11,5 +11,5 @@ AppBundle\Entity\Goods:
     fields:
         name:
             type: string
-            length: 255
+            length: '500'
     lifecycleCallbacks: {  }
