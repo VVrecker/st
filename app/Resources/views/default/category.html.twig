@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h1> {{ name }}</h1>
+<ol>
+{% for good in goods %}
+	<li>{{good.name}}</li>
+{% endfor %}
+</ol>
+<a href="{{ path('homepage') }}">Главная</a>
+{% endblock %}

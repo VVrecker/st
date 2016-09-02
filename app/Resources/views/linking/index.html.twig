@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Linking list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for linking in linkings %}
+            <tr>
+                <td><a href="{{ path('linking_show', { 'id': linking.id }) }}">{{ linking.id }}</a></td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('linking_show', { 'id': linking.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('linking_edit', { 'id': linking.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('linking_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}
